@@ -2,6 +2,7 @@ package douglas.agro_rastreavel.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.time.LocalDate;
@@ -11,6 +12,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "animal")
 public class Animal {
+    @Id
     @Column(nullable = false, unique = true)
     private UUID codigoAnimal;
     @Column(nullable = false)

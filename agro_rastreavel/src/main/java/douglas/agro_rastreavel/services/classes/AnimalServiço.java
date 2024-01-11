@@ -26,14 +26,13 @@ public class AnimalServiço implements EuAnimalServiço {
         return animalRepositorio.findAllById(produtor);
     }
     public Animal encontrarAnimal(Long produtor, UUID animal){
-        Optional<Animal> encontrado = Optional.ofNullable(this.animalRepositorio.findByProdutorAndByAnimal(produtor, animal);
-
+        Optional<Animal> encontrado = Optional.ofNullable(this.animalRepositorio.findByProdutorAndByAnimal(produtor, animal));
         if(encontrado.isPresent()){
             return encontrado.get();
         }
         else {
             throw new RuntimeException("Animal ${animal.id} encontrado, porém não registrado para" +
-                "o produtor ${produtor.nome}? Suspeita de algo errado? Entre em contato com os administradores," +
+                "o produtor ${produtor.nome}.\n Suspeita de algo errado?\n Entre em contato com os administradores," +
                 "por favor.\n");
         }
     }

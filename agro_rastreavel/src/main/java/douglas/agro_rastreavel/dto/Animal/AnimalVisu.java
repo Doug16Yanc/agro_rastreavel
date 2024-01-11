@@ -2,32 +2,36 @@ package douglas.agro_rastreavel.dto.Animal;
 
 import douglas.agro_rastreavel.entities.Animal;
 
-import douglas.agro_rastreavel.entities.Produtor;
-import jakarta.validation.constraints.NotNull;
-
 import java.time.LocalDate;
+import java.util.UUID;
 
-public class AnimalDto {
-    @NotNull(message = "Este campo não pode ser nulo.\n")
+public class AnimalVisu {
+    private UUID codigoAnimal;
     private double peso;
-
     private LocalDate dataNascimento;
-
-    @NotNull(message = "Este campo não pode ser nulo.\n")
-
     private double percentPrenhez;
-
-    @NotNull(message = "Este campo não pode ser nulo.\n")
     private LocalDate desmame;
-    @NotNull(message = "Este campo não pode ser nulo.\n")
-
     private double indexNatal;
-    @NotNull(message = "Este campo não pode ser nulo.\n")
-
     private double indexMortal;
-    @NotNull(message = "Este campo não pode ser nulo.\n")
 
-    private Long produtorId;
+    public AnimalVisu(Animal animal) {
+        this.codigoAnimal = animal.getCodigoAnimal();
+        this.peso = animal.getPeso();
+        this.dataNascimento = animal.getDataNascimento();
+        this.percentPrenhez = animal.getPercentPrenhez();
+        this.desmame = animal.getDesmame();
+        this.indexNatal = animal.getIndexNatal();
+        this.indexMortal = animal.getIndexMortal();
+    }
+
+    public UUID getCodigoAnimal() {
+        return codigoAnimal;
+    }
+
+    public void setCodigoAnimal(UUID codigoAnimal) {
+        this.codigoAnimal = codigoAnimal;
+    }
+
     public double getPeso() {
         return peso;
     }
@@ -74,25 +78,5 @@ public class AnimalDto {
 
     public void setIndexMortal(double indexMortal) {
         this.indexMortal = indexMortal;
-    }
-
-    public Long getProdutorId() {
-        return produtorId;
-    }
-
-    public void setProdutorId(Long produtorId) {
-        this.produtorId = produtorId;
-    }
-
-    public Animal toEntity(Animal animal) {
-        animal.setPeso(this.peso);
-        animal.setDataNascimento(this.dataNascimento);
-        animal.setPercentPrenhez(this.percentPrenhez);
-        animal.setDesmame(this.desmame);
-        animal.setIndexNatal(this.indexNatal);
-        animal.setIndexMortal(this.indexMortal);
-        Produtor produtor = new Produtor();
-        produtor.setId(this.produtorId);
-        return animal;
     }
 }

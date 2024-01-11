@@ -19,7 +19,7 @@ public class AnimalRecurso {
 
     @PostMapping
     public ResponseEntity<String> cadastrarAnimal(@RequestBody @Valid AnimalDto animalDto){
-        Animal animal = this.animalServiço.salvar(produtorDto.toEntity());
+        Animal animal = this.animalServiço.salvarAnimal(animalDto.toEntity());
         return ResponseEntity.status(HttpStatus.CREATED).body("Produtor ${produtor.primeiroNome} e ${produtor.email} salvo" +
                 "com sucesso.\n");
     }

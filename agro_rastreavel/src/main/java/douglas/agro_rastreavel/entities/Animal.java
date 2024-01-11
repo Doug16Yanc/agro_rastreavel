@@ -30,6 +30,9 @@ public class Animal {
 
     private double indexMortal;
 
+    public Animal() {
+    }
+
     public Animal(UUID codigoAnimal, double peso, LocalDate dataNascimento, double percentPrenhez, LocalDate desmame,
                   double indexNatal, double indexMortal){
         this.codigoAnimal = codigoAnimal;

@@ -13,15 +13,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/produtores")
+@RequestMapping("/api/produtores")
 public class ProdutorRecurso {
-    private ProdutorServiço produtorServiço;
+    private final ProdutorServiço produtorServiço;
     private ProdutorDto atualProdutorDto;
+
+    public ProdutorRecurso(ProdutorServiço produtorServiço) {
+        this.produtorServiço = produtorServiço;
+    }
 
     @PostMapping
     public ResponseEntity<String> salvarProdutor(@RequestBody @Valid ProdutorDto produtorDto){
         Produtor produtor = this.produtorServiço.salvarDado(produtorDto.toEntity());
-        return ResponseEntity.status(HttpStatus.CREATED).body("Produtor ${produtor.primeiroNome} e ${produtor.email} salvo" +
+        return ResponseEntity.status(HttpStatus.CREATED).body("Produtor " + produtor.getPrimeiroNome() + "e" + produtor.getEmail() + "salvo" +
                 "com sucesso.\n");
     }
     @GetMapping("/{id}")

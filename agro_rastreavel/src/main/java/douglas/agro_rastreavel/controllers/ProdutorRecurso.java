@@ -1,8 +1,8 @@
 package douglas.agro_rastreavel.controllers;
 
-import douglas.agro_rastreavel.dto.Produtor.AtualProdutorDto;
-import douglas.agro_rastreavel.dto.Produtor.ProdutorDto;
-import douglas.agro_rastreavel.dto.Produtor.ProdutorVisu;
+import douglas.agro_rastreavel.dto.produtor.AtualProdutorDto;
+import douglas.agro_rastreavel.dto.produtor.ProdutorDto;
+import douglas.agro_rastreavel.dto.produtor.ProdutorVisu;
 import douglas.agro_rastreavel.entities.Produtor;
 import douglas.agro_rastreavel.services.classes.ProdutorServiço;
 import jakarta.validation.Valid;

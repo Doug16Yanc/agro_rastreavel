@@ -1,4 +1,4 @@
-package douglas.agro_rastreavel.dto.Animal;
+package douglas.agro_rastreavel.dto.animal;
 
 import douglas.agro_rastreavel.entities.Animal;
 
@@ -84,7 +84,8 @@ public class AnimalDto {
         this.produtorId = produtorId;
     }
 
-    public Animal toEntity(Animal animal) {
+    public Animal toEntity() {
+        Animal animal = new Animal();
         animal.setPeso(this.peso);
         animal.setDataNascimento(this.dataNascimento);
         animal.setPercentPrenhez(this.percentPrenhez);

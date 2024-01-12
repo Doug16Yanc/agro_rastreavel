@@ -1,4 +1,4 @@
-package douglas.agro_rastreavel.dto.Produtor;
+package douglas.agro_rastreavel.dto.produtor;
 
 import douglas.agro_rastreavel.entities.Localidade;
 import douglas.agro_rastreavel.entities.Produtor;
@@ -17,7 +17,8 @@ public class ProdutorDto {
     public ProdutorDto() {
     }
 
-    public Produtor toEntity(Produtor produtor) {
+    public Produtor toEntity() {
+        Produtor produtor = new Produtor();
         this.id = produtor.getId();
         this.primeiroNome = produtor.getPrimeiroNome();
         this.ultimoNome = produtor.getUltimoNome();

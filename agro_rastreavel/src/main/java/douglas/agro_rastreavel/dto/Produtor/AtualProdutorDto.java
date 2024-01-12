@@ -1,4 +1,4 @@
-package douglas.agro_rastreavel.dto;
+package douglas.agro_rastreavel.dto.produtor;
 
 import douglas.agro_rastreavel.entities.Localidade;
 import douglas.agro_rastreavel.entities.Produtor;

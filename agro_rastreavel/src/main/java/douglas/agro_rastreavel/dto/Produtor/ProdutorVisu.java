@@ -1,10 +1,8 @@
-package douglas.agro_rastreavel.dto.Produtor;
+package douglas.agro_rastreavel.dto.produtor;
 
 import douglas.agro_rastreavel.entities.Localidade;
 import douglas.agro_rastreavel.entities.Produtor;
 import jakarta.persistence.*;
-
-import java.util.Optional;
 
 public class ProdutorVisu {
     private Long id;
